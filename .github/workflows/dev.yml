@@ -1,0 +1,13 @@
+name: Test
+on: workflow_dispatch
+jobs:
+  test:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Get code
+      uses: action/checkout@v3
+    - name: install
+      uses: action/setup-node@v3
+    - name: Install dependencies
+      run: npm ci
+    - name: Run Test
